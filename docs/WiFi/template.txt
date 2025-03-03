@@ -1,0 +1,62 @@
+/interface bridge print
+
+/interface bridge port add bridge=bridge1 interface=wlan1
+
+/ip address print
+
+/ip address add address=192.168.1.1/24 interface=wlan1
+
+/ip dhcp-server print
+
+/ip dhcp-server add name=dhcp-wlan1 interface=wlan1 address-pool=dhcp-pool disabled=no
+
+/ip firewall nat print
+
+/ip firewall nat add chain=srcnat action=masquerade out-interface=ether1
+
+/ip route print
+
+/ip route add dst-address=0.0.0.0/0 gateway=192.168.0.1
+
+/ping 8.8.8.8 interface=wlan1
+
+/caps-man manager set enabled=yes
+
+/interface ethernet set ether4 speed=10Mbps full-duplex=yes
+
+/interface enable ether4
+
+/interface ethernet monitor ether4
+
+/interface bridge port print
+
+/interface bridge port add interface=ether4 bridge=bridge1
+
+/interface bridge port enable ether4
+
+/ip dhcp-client remove ether4
+/ip dhcp-client add interface=ether5 add-default-route=yes use-peer-dns=yes use-peer-ntp=yes
+
+/ip dhcp-client print
+
+/ip firewall nat print
+
+/ip service print
+
+/ip service enable winbox
+
+/ip address print
+
+/ip address add address=192.168.88.1/24 interface=ether2
+
+/ip firewall filter print
+
+/ip firewall filter add chain=input protocol=tcp dst-port=8291 action=accept place-before=0
+
+/interface print
+
+/interface enable ether1
+
+/interface ethernet monitor ether1
+
+/system reboot
