@@ -1,0 +1,100 @@
+# 🚫 Ignore temporary reports
+reports/*
+*.drawio.bkp
+
+# 🚫 Ignore virtual environments
+.venv/
+venv/
+myenv/
+new_env/
+
+# 🚫 Ignore Python-generated files
+__pycache__/
+*.pyc
+*.pyo
+*.pid
+*.pyd
+
+# 🚫 Ignore test data and logs
+data/
+logs/
+*.log
+
+# 🚫 Ignore local and temporary configuration files
+.env
+*.bak
+*.tmp
+*.swp
+*.local
+
+# 🚫 Ignore unnecessary images and binary files
+*.eps
+*.ico
+*.jpg
+*.png
+*.pdf
+*.tiff
+*.webp
+
+# 🚫 Ignore temporary database files
+*.db
+*.sqlite3
+*.out
+*.csv
+*.json
+
+# 🚫 Ignore editor and development tool configurations
+.vscode/
+.idea/
+
+# 🚫 Ignore locally installed dependencies
+modules/
+node_modules/
+
+# 🚫 Ignore sensitive security files
+*.pem
+*.key
+*.crt
+
+# 🚫 Ignore installation and temporary scripts
+get-pip.py
+setup.sh
+
+# 🚫 Ignore temporary Docker files
+docker/*.bak
+docker/*.tmp
+docker/.env
+docker/.DS_Store
+.env
+docker-compose.override.yml
+
+# 🚫 Ignore temporary monitoring data
+observability/grafana/data/
+observability/grafana/logs/
+observability/prometheus/data/
+
+# 🚫 Ignore Jaeger logs and temporary data
+observability/jaeger/*.log
+observability/jaeger/traces/
+observability/jaeger/data/
+
+# 🚫 Ignore utility scripts
+utils/
+
+# 🚫 Ignore generated reports
+docs/*.pdf
+
+# 🚫 Ignore other generated files
+*.swp
+*.swo
+
+# 🚫 Ignore local logs and configuration files
+logrotate.conf
+supervisord.conf
+
+# 🚫 Ignore test CSV files
+users.csv
+data/chunks_head/*
+
+# ✅ Allow PNG images in docs/assets/images/
+!docs/assets/images/*.png
